@@ -21,7 +21,7 @@ src/main
 |-- java/com.cht
 	|-- common -- 其他
 	|-- controller -- 接口包
-	|-- dto -- 实体类
+	|-- pojo -- 实体类
 	|-- MailDemoApplication -- 启动类
 |-- resources
 	|-- application.yml -- 配置
