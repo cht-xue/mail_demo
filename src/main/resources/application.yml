@@ -1,0 +1,8 @@
+server:
+  port: 9000 # 端口
+
+spring:
+  application:
+    name: mail_demo
+  profiles:
+    active: mail # 使用环境

@@ -1,0 +1,13 @@
+spring:
+  mail:
+    host: smtp.qq.com # 配置QQ邮箱服务器地址
+    port: 587 # 端口
+    username: xx@qq.com # QQ邮箱账号
+    password: xx # QQ邮箱的授权码
+    default-encoding: UTF-8 # 配置默认编码
+    properties:
+      mail:
+        smtp:
+          auth: true # 开启 SMTP 协议认证
+          starttls:
+            enable: true # 开启 TLS 加密
