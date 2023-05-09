@@ -31,7 +31,7 @@ src/main
 	|-- MailDemoApplication -- 启动类
 |-- resources
 	|-- application.yml -- 配置
-	|-- application.mail.yml -- mail 配置
+	|-- application-mail.yml -- mail 配置
 ```
 
 > common 包结构
@@ -51,7 +51,7 @@ controller
 
 ## 使用方法
 
-需要修改 application.mail.yml 配置文件中的 username 和 password
+需要修改 application-mail.yml 配置文件中的 username 和 password
 
 默认使用的是 QQ 邮箱，可以修改成其他邮箱，修改时将端口也改成对应的端口
 
