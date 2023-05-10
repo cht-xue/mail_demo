@@ -20,34 +20,11 @@
 | validation        | 用于实现参数校验 |
 | mail              | 用于发送邮箱     |
 
-## 包结构
+## 功能
 
-```
-src/main
-|-- java/com.cht
-	|-- common -- 其他
-	|-- controller -- 接口包
-	|-- pojo -- 实体类
-	|-- MailDemoApplication -- 启动类
-|-- resources
-	|-- application.yml -- 配置
-	|-- application-mail.yml -- mail 配置
-```
-
-> common 包结构
-
-```
-common
-|-- ExceptionControllerAdvice -- 统一异常处理器
-|-- RegularUtils -- 正则校验工具类
-```
-
-> controller 包结构
-
-```
-controller
-|-- MailController -- 邮箱接口
-```
+- 发送简单文本形式邮件
+- 发送携带文件形式邮件
+- 定时获取邮箱中邮件的信息
 
 ## 使用方法
 
@@ -67,8 +44,38 @@ spring:
     password: xx # QQ 邮箱的授权码
 ```
 
-## 功能
+## 包结构
 
-- 发送简单文本形式邮件
-- 发送携带文件形式邮件
+```
+src/main
+|-- java/com.cht
+	|-- common -- 其他
+	|-- controller
+	|-- pojo -- 实体类
+	|-- service
+		|-- impl
+	|-- timedtask -- 定时任务包
+	|-- MailDemoApplication -- 启动类
+|-- resources
+	|-- application.yml -- 配置
+	|-- application-mail.yml -- mail 配置
+```
 
+> common 包结构
+
+```
+common
+|-- ExceptionControllerAdvice -- 统一异常处理器
+|-- RegularUtils -- 正则校验工具类
+```
+
+> timedtask 包结构
+
+```
+timedtask 
+	|-- EmailTime -- 定时获取邮箱中邮件信息
+```
+
+
+
+## 

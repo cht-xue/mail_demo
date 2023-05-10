@@ -8,6 +8,6 @@ spring:
     properties:
       mail:
         smtp:
-          auth: true # 开启 SMTP 协议认证
+          auth: true  # 是否需要认证
           starttls:
-            enable: true # 开启 TLS 加密
+            enable: true  # 是否启用 SSL/TLS 安全连接

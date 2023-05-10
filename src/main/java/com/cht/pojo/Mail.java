@@ -18,6 +18,7 @@ public class Mail {
     private String headline;
 
     @Schema(description = "发送内容")
+    @NotBlank(message = "内容不能为空")
     private String body;
 
 }
