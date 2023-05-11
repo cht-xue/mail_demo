@@ -44,6 +44,8 @@ public class MailServiceImpl implements MailService {
         // 设置邮件发送时间，这里使用系统当前时间
         message.setSentDate(new Date());
 
+        log.info("邮件地址：{}，标题：{}",mail.getAddress(),mail.getHeadline());
+
         // 调用 JavaMailSender 发送邮件
         javaMailSender.send(message);
     }
@@ -84,6 +86,28 @@ public class MailServiceImpl implements MailService {
             javaMailSender.send(mimeMessage);
         } catch (MessagingException | IOException e) {
             log.error("发送携带文件邮件失败：",e);
+            throw new RuntimeException("发送失败");
+        }
+    }
+
+    @Override
+    public void sendSimpleMailHtml(Mail mail) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        try {
+            // 设置 邮件地址，标题，内容，时间
+            MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+            helper.setFrom(username);
+            helper.setTo(mail.getAddress());
+            helper.setSubject(mail.getHeadline());
+            // 设置邮件内容，并指定(true)为 HTML 格式
+            helper.setText(mail.getBody(),true);
+            helper.setSentDate(new Date());
+
+            log.info("邮件地址：{}，标题：{}",mail.getAddress(),mail.getHeadline());
+            // 发送邮件
+            javaMailSender.send(mimeMessage);
+        } catch (MessagingException e) {
+            log.error("错误信息：",e);
             throw new RuntimeException("发送失败");
         }
     }

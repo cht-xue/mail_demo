@@ -36,4 +36,11 @@ public class MailController {
        mailService.sendSimpleMailFile(address,headline,body,file);
         return "发送成功";
     }
+
+    @PostMapping("html")
+    @Operation(summary = "发送 HTML 格式邮件")
+    public String sendSimpleMailHtml(@RequestBody @Valid Mail mail){
+        mailService.sendSimpleMailHtml(mail);
+        return "发送成功";
+    }
 }

@@ -22,4 +22,10 @@ public interface MailService {
      * @param file 文件
      */
     void sendSimpleMailFile(String address, String headline, String body, MultipartFile file);
+
+    /**
+     * 发送 HTML 格式邮件
+     * @param mail 邮件信息
+     */
+    void sendSimpleMailHtml(Mail mail);
 }
